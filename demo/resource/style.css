@@ -1,0 +1,27 @@
+.my_bg_1{
+    height: 100px;
+    width: 100px;
+    background: url('./demo1_sprite.png');
+    background-size: 100px;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+.my_bg_2{
+    height: 100px;
+    width: 100px;
+    background: url('./demo2_sprite.png') no-repeat -20px -20px;
+    background-size: 150px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.my_content{
+    display: flex;
+    justify-content: center;
+}
+
+.text_center{
+    text-align: center;
+}

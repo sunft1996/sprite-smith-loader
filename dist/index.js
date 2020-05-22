@@ -125,7 +125,6 @@ module.exports = function (source) {
 
                 }
             });
-            console.log(bgszLineStart, bgszLineEnd, bgLineStart, bgLineEnd)
 
             // 处理 background-size
             parsedValue.walk(node => {
