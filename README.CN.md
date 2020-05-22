@@ -1,9 +1,3 @@
-<!--
- * @Descripttion: 
- * @Author: sunft
- * @Date: 2020-05-22 13:55:05
- * @LastEditTime: 2020-05-22 13:55:41
---> 
 <h1 align="center">sprite-smith-loader</h1>
 
 
@@ -11,6 +5,8 @@
 ![image](https://img.shields.io/badge/webpack-%5E4.0.0-blue)
 ## 介绍
 sprite-smith-loader是一款自动生成雪碧图工具，你可以在webpack中使用它，它会自动生成雪碧图并修改相应的css代码。
+
+支持**CSS**、**SASS**、**LESS**。
 ## 安装
 下载sprite-smith-loader
 
@@ -18,7 +14,7 @@ sprite-smith-loader是一款自动生成雪碧图工具，你可以在webpack中
 npm install --save-dev sprite-smith-loader
 ```
 ## 配置
-将loader添加到webpack的配置中，必须放在css-loader之后
+将loader添加到webpack的配置中，必须放在css-loader之后，别忘了添加file-loader或url-loader处理图片路径。
 
 **webpack.config.js**
 
@@ -26,17 +22,47 @@ npm install --save-dev sprite-smith-loader
 module.exports = {
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader','sprite-smith-loader'],
-      },
+        {
+            test: /\.(png|jpe?g|gif)$/i,
+            loader: 'file-loader',
+            options: {
+                outputPath: 'images',
+            },
+        },
+        {
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader','sprite-smith-loader'],
+        }
     ],
   },
 };
 ```
+配合SASS
+
+```
+module.exports = {
+  module: {
+    rules: [
+        {
+            test: /\.(png|jpe?g|gif)$/i,
+            loader: 'file-loader',
+            options: {
+                outputPath: 'images',
+            },
+        },
+        {
+            test: /\.(sass|scss|css)/,
+            use: ['style-loader', 'css-loader','sprite-smith-loader',"sass-loader"],
+        }
+    ],
+  },
+};
+
+```
+
 
 ## 使用
-修改你的css文件
+修改你的 CSS/SCSS/SASS/LESS 文件
 
 ```
 .my_bg_1{

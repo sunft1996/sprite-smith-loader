@@ -1,9 +1,3 @@
-<!--
- * @Descripttion: 
- * @Author: sunft
- * @Date: 2020-05-22 13:54:30
- * @LastEditTime: 2020-05-22 13:57:44
---> 
 <h1 align="center">sprite-smith-loader</h1>
 
 
@@ -13,13 +7,17 @@
 :rocket: [中文文档点这里](https://github.com/sunft1996/sprite-smith-loader/blob/master/README.CN.md/)
 ## Introduce
 Sprite Smith loader is a tool for automatically generating CSS Sprites. You can use it in webpack. It will automatically generate CSS Sprites and modify the corresponding CSS code.
+
+supports **CSS**、**SASS**、**LESS**.
 ## Getting Started
 To begin, you'll need to install sprite-smith-loader:
 
 ```
-npm install --save-dev css-loader
+npm install --save-dev sprite-smith-loader
 ```
-Then add the plugin to your webpack config. For example:
+Then add the plugin to your webpack config. And don't forget to add the file-loader or url-loader. 
+
+For example:
 
 **webpack.config.js**
 
@@ -27,17 +25,46 @@ Then add the plugin to your webpack config. For example:
 module.exports = {
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader','sprite-smith-loader'],
-      },
+        {
+            test: /\.(png|jpe?g|gif)$/i,
+            loader: 'file-loader',
+            options: {
+                outputPath: 'images',
+            },
+        },
+        {
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader','sprite-smith-loader'],
+        },
     ],
   },
 };
 ```
+with SaSS 
+
+```
+module.exports = {
+  module: {
+    rules: [
+        {
+            test: /\.(png|jpe?g|gif)$/i,
+            loader: 'file-loader',
+            options: {
+                outputPath: 'images',
+            },
+        },
+        {
+            test: /\.(sass|scss|css)/,
+            use: ['style-loader', 'css-loader','sprite-smith-loader',"sass-loader"],
+        }
+    ],
+  },
+};
+
+```
 
 ## Usage
-Modify your CSS file
+Modify your CSS/SCSS/SASS/LESS file
 ```
 .my_bg_1{
     height: 100px;

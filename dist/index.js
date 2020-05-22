@@ -8,9 +8,9 @@ module.exports = function (source) {
 
     let outputName = new Date().getTime() + '_smith.png';
     // 清除css中的注释
-    const cleanSource = source.replace(/\/\*[\w\W]*\*\//g, '')
-
+    const cleanSource = source.replace(/(\/\*.*\*\/)|\/\/.*/g, '')
     let imgs = cleanSource.match(/url\(.+_sprite.+\)/g);
+    if(!imgs) return cleanSource;
 
     const callback = this.async();
 
