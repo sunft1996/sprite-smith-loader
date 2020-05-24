@@ -62,7 +62,7 @@ module.exports = {
 
 
 ## 使用
-修改你的 CSS/SCSS/SASS/LESS 文件
+修改图片名以 **_sprite.png** 结尾，并在css中引入它
 
 ```
 .my_bg_1{
@@ -79,7 +79,7 @@ module.exports = {
     background-size: 150px 150px;
 }
 ```
-雪碧图生成后，loader会修改css中background属性，为了准确计算转化后的background属性，请你遵循以下规范：
+只要你遵循以下规范，loader会在css中引入生成的雪碧图作为新的背景图，并替换background-size、background-position等属性。
     
 
 属性名 | 是否必填 | 说明
