@@ -4,7 +4,7 @@
 ![image](https://img.shields.io/badge/license-MIT-green)
 ![image](https://img.shields.io/badge/webpack-%5E4.0.0-blue)
 ## 介绍
-sprite-smith-loader是一款自动生成雪碧图工具，你可以在webpack中使用它，它会自动生成雪碧图并修改相应的css代码。
+sprite-smith-loader是一款自动生成雪碧图工具，你可以在webpack中使用它，它会遍历css中以_sprite.png结尾的图片并自动生成雪碧图，然后修改相应的css代码。
 
 支持**CSS**、**SASS**、**LESS**。
 ## 安装
