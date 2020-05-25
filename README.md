@@ -5,6 +5,7 @@
 ![image](https://img.shields.io/badge/webpack-%5E4.0.0-blue)
 
 :rocket: [中文文档点这里](https://github.com/sunft1996/sprite-smith-loader/blob/master/README.CN.md/)
+
 ## Introduce
 Sprite Smith loader is a tool for automatically generating CSS Sprites. You can use it in webpack. It will find all the_ sprite.png End picture and auto generate CSS Sprites and modify the corresponding CSS code.
 
@@ -93,6 +94,9 @@ background | true| Include image，position，repeat
 background-image | true| Included in background，picture name with _ sprite.png ending
 background-position | false| Included in background，format of value PX PX
 background-repeat | false| Included in background，must be no-repeat
+
+## Other
+If you have any questions, please create an issue on [GitHub](https://github.com/sunft1996/sprite-smith-loader/).
 
 ## License
 

@@ -9,11 +9,13 @@ module.exports = function (source) {
     let outputName = new Date().getTime() + '_smith.png';
     // 清除css中的注释
     const cleanSource = source.replace(/(\/\*.*\*\/)|\/\/.*/g, '')
-    let imgs = cleanSource.match(/url\(.+_sprite.+\)/g);
+    let imgs = cleanSource.match(/url\(((?!;).)+_sprite\.png('|")\)/g);
     if(!imgs) return cleanSource;
 
     const callback = this.async();
-
+    
+    console.log('images:',imgs)
+    
     imgs = imgs.map(item => path.resolve(this.context, item.replace(/(url\(.)|(.\))/g, '')));
 
     Spritesmith.run({ src: imgs }, async (err, result) => {

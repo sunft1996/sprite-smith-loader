@@ -1,6 +1,6 @@
 {
   "name": "sprite-smith-loader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "sunft",
   "description": "css sprites loader for webpack",
   "main": "dist/index.js",
