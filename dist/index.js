@@ -174,6 +174,10 @@ module.exports = function (source) {
                             return;
                         }
                     }
+                    // 没有定义background-position
+                    if(bgLineEnd == node.sourceIndex && x === undefined && y === undefined){
+                        node.value = - coord[item.url].x * ratio + 'px ' + - coord[item.url].y * ratio + 'px;'
+                    }
                 });
             }
         }

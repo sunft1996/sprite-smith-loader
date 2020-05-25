@@ -1,6 +1,6 @@
 {
   "name": "sprite-smith-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "sunft",
   "description": "css sprites loader for webpack",
   "main": "dist/index.js",
@@ -19,8 +19,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^7.0.0",
     "css-loader": "^3.5.3",
+    "eslint": "^7.0.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "style-loader": "^1.2.1",

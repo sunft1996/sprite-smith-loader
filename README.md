@@ -6,9 +6,11 @@
 
 :rocket: [中文文档点这里](https://github.com/sunft1996/sprite-smith-loader/blob/master/README.CN.md/)
 ## Introduce
-Sprite Smith loader is a tool for automatically generating CSS Sprites. You can use it in webpack. It will automatically generate CSS Sprites and modify the corresponding CSS code.
+Sprite Smith loader is a tool for automatically generating CSS Sprites. You can use it in webpack. It will find all the_ sprite.png End picture and auto generate CSS Sprites and modify the corresponding CSS code.
 
 supports **CSS**、**SASS**、**LESS**.
+
+The picture should be in PNG format (do not directly change the picture suffix to PNG)
 ## Getting Started
 To begin, you'll need to install sprite-smith-loader:
 
@@ -40,7 +42,7 @@ module.exports = {
   },
 };
 ```
-with SaSS 
+with SASS 
 
 ```
 module.exports = {
@@ -64,7 +66,7 @@ module.exports = {
 ```
 
 ## Usage
-Modify your CSS/SCSS/SASS/LESS file
+Change the picture name to_ sprite.png  End and reference it in CSS
 ```
 .my_bg_1{
     height: 100px;

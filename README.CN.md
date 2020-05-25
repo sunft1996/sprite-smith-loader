@@ -4,9 +4,11 @@
 ![image](https://img.shields.io/badge/license-MIT-green)
 ![image](https://img.shields.io/badge/webpack-%5E4.0.0-blue)
 ## 介绍
-sprite-smith-loader是一款自动生成雪碧图工具，你可以在webpack中使用它，它会自动生成雪碧图并修改相应的css代码。
+sprite-smith-loader是一款自动生成雪碧图工具，你可以在webpack中使用它，它会遍历css中以_sprite.png结尾的图片并自动生成雪碧图，然后修改相应的css代码。
 
 支持**CSS**、**SASS**、**LESS**。
+
+图片应为png格式（不要直接将图片后缀改为png）。
 ## 安装
 下载sprite-smith-loader
 
@@ -62,7 +64,7 @@ module.exports = {
 
 
 ## 使用
-修改你的 CSS/SCSS/SASS/LESS 文件
+修改图片名以 **_sprite.png** 结尾，并在css中引入它
 
 ```
 .my_bg_1{
@@ -79,7 +81,7 @@ module.exports = {
     background-size: 150px 150px;
 }
 ```
-雪碧图生成后，loader会修改css中background属性，为了准确计算转化后的background属性，请你遵循以下规范：
+只要你遵循以下规范，loader会在css中引入生成的雪碧图作为新的背景图，并替换background-size、background-position等属性。
     
 
 属性名 | 是否必填 | 说明
