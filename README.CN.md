@@ -8,7 +8,7 @@ sprite-smith-loader是一款自动生成雪碧图工具，你可以在webpack中
 
 支持**CSS**、**SASS**、**LESS**。
 
-图片应为png格式（不要直接将图片后缀改为png）。
+图片应为png格式（不要直接将jpg图片后缀改为png）。
 ## 安装
 下载sprite-smith-loader
 
