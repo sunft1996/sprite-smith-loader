@@ -13,7 +13,7 @@ sprite-smith-loader是一款自动生成雪碧图工具，你可以在webpack中
 下载sprite-smith-loader
 
 ```
-npm install --save-dev sprite-smith-loader
+npm install --save-dev sprite-smith-loader remove-file-webpack-plugin
 ```
 ## 配置
 将loader添加到webpack的配置中，必须放在css-loader之后，别忘了添加file-loader或url-loader处理图片路径。
@@ -21,6 +21,9 @@ npm install --save-dev sprite-smith-loader
 **webpack.config.js**
 
 ```
+// 添加 remove-file-webpack-plugin 来清理 sprites文件夹
+const RemoveFileWebpackPlugin = require('remove-file-webpack-plugin'); 
+
 module.exports = {
   module: {
     rules: [
@@ -37,11 +40,18 @@ module.exports = {
         }
     ],
   },
+  plugins: [
+    new RemoveFileWebpackPlugin({
+        dirNames:["sprites"]
+    })
+  ],
 };
 ```
 配合SASS
 
 ```
+const RemoveFileWebpackPlugin = require('remove-file-webpack-plugin'); 
+
 module.exports = {
   module: {
     rules: [
@@ -58,6 +68,11 @@ module.exports = {
         }
     ],
   },
+  plugins: [
+    new RemoveFileWebpackPlugin({
+        dirNames:["sprites"]
+    })
+  ],
 };
 
 ```

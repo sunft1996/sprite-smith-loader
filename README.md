@@ -16,7 +16,7 @@ The picture should be in PNG format (do not directly change the picture suffix t
 To begin, you'll need to install sprite-smith-loader:
 
 ```
-npm install --save-dev sprite-smith-loader
+npm install --save-dev sprite-smith-loader remove-file-webpack-plugin
 ```
 Then add the plugin to your webpack config. And don't forget to add the file-loader or url-loader. 
 
@@ -25,6 +25,9 @@ For example:
 **webpack.config.js**
 
 ```
+// add remove-file-webpack-plugin to clean sprites folders
+const RemoveFileWebpackPlugin = require('remove-file-webpack-plugin'); 
+
 module.exports = {
   module: {
     rules: [
@@ -41,11 +44,18 @@ module.exports = {
         },
     ],
   },
+  plugins: [
+    new RemoveFileWebpackPlugin({
+        dirNames:["sprites"]
+    })
+  ],
 };
 ```
 with SASS 
 
 ```
+const RemoveFileWebpackPlugin = require('remove-file-webpack-plugin'); 
+
 module.exports = {
   module: {
     rules: [
@@ -62,6 +72,11 @@ module.exports = {
         }
     ],
   },
+  plugins: [
+    new RemoveFileWebpackPlugin({
+        dirNames:["sprites"]
+    })
+  ],
 };
 
 ```

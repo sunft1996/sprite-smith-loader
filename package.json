@@ -1,8 +1,10 @@
 {
   "name": "sprite-smith-loader",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "sunft",
   "description": "css sprites loader for webpack",
+  "repository": "https://github.com/sunft1996/sprite-smith-loader",
+  "homepage": "https://github.com/sunft1996/sprite-smith-loader",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +17,8 @@
     "loader-utils": "^2.0.0",
     "path": "^0.12.7",
     "postcss-value-parser": "^4.1.0",
-    "spritesmith": "^3.4.0"
+    "spritesmith": "^3.4.0",
+    "walker": "^1.0.7"
   },
   "license": "MIT",
   "devDependencies": {
